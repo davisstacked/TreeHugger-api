@@ -17,7 +17,11 @@ const UserSchema = mongoose.Schema({
     },
     userphoto: {
         type: String
-    }
+    },
+    photos: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Photo'
+    }]
 });
 
 const User = mongoose.model('User', userSchema);
