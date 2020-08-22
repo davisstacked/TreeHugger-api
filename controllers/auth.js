@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs');
 const jwt = require("jsonwebtoken");
-const db = require('..models');
+const db = require('../models');
 
 
 // REGISTER CONTROLLER

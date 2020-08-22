@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 const routes = require('./routes');
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 const app = express();
 
 // CORS - Cross Origin Resource Sharing
@@ -21,12 +21,12 @@ app.use(express.json());
 
 // middleware - API routes
 // Game Routes
-app.use('/api/v1/photos', routes.photos);
+// app.use('/api/v1/photos', routes.photos);
 app.use(express.json());
 
 // middleware - API routes
 // Photo Routes
-app.use('/api/v1/photos', routes.photos);
+// app.use('/api/v1/photos', routes.photos);
 // Auth Routes
 app.use('/api/v1/auth', routes.auth);
 
