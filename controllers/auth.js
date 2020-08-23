@@ -6,7 +6,7 @@ const db = require('../models');
 // REGISTER CONTROLLER
 const register = async (req, res) => {
     //VALIDATE FIELD INPUT
-    if (!req.body.username || !req.body.email || !req.body.password) {
+    if (!req.body.username || !req.body.password) {
         return res.status(400).json({message: 'All fields are required. Please try again'});
     }
 
@@ -16,14 +16,14 @@ const register = async (req, res) => {
     }
 
     try {
-        // CHECK IF EMAIL ALREADY REGISTERED
-        const foundUser = await db.User.findOne({ email: req.body. email });
+        // CHECK IF USERNAME ALREADY REGISTERED
+        const foundUser = await db.User.findOne({ username: req.body.username });
 
         // SEND ERROR IF FOUND USER
         if (foundUser) {
             res.status(400).json({
                 status: 400,
-                message: "Email address has already been registered. Please try again",
+                message: "Username has already been registered. Please try again",
             });
         }
 
@@ -48,16 +48,15 @@ const register = async (req, res) => {
 
 // LOGIN CONTROLLER
 const login = async (req, res) => {
-    console.log(req.body);
     try {
-        // FIND USER BY EMAIL (OR USERNAME)
+        // FIND USER BY USERNAME
         // const foundUser = await db.User.findOne({ email: req.body.email });
         const foundUser = await db.User.findOne({ username: req.body.username });
 
         if (!foundUser) {
             return res.status(400).json({
                 status: 400,
-                message: "Username or password is incorrect"
+                message: "Username is incorrect"
             });
         }
 
@@ -66,7 +65,7 @@ const login = async (req, res) => {
         if (!isMatch) {
            return res.status(400).json({
                status: 400,
-               message: "Username or password is incorrect",
+               message: "Username is incorrect",
            });
         }
 

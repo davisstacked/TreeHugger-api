@@ -5,13 +5,14 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 const routes = require('./routes');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 const app = express();
 
 // CORS - Cross Origin Resource Sharing
 app.use(cors({
     origin: [`http://localhost:3000`],
     methods: "GET, POST, PUT, DELETE",
+    // credentials: true, // allows the session cookie to be sent back and forth from server to client, but we're using tokens not cookies. 
     optionsSuccessStatus: 200 
 }));
 
