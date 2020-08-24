@@ -15,7 +15,7 @@ const userSchema = mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-    userphoto: {
+    image: {
         type: String
     },
     photos: [{
