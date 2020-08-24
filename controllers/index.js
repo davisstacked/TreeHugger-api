@@ -1,4 +1,4 @@
 module.exports = {
-    // photos: require('./photos'),
+    photos: require('./photos'),
     auth: require('./auth'),
 };

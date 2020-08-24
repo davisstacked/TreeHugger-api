@@ -21,13 +21,13 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 // middleware - API routes
-// Game Routes
-// app.use('/api/v1/photos', routes.photos);
+// Photo Routes
+app.use('/api/v1/photos', routes.photos);
 app.use(express.json());
 
 // middleware - API routes
 // Photo Routes
-// app.use('/api/v1/photos', routes.photos);
+app.use('/api/v1/photos', routes.photos);
 // Auth Routes
 app.use('/api/v1/auth', routes.auth);
 
