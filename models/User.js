@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const userSchema = mongoose.Schema({
+const userSchema = new mongoose.Schema({
     username: {
         type: String,
         unique: true,
@@ -10,10 +10,6 @@ const userSchema = mongoose.Schema({
         type: String,
         minlength: 4,
         required: [true, 'Password is required'],
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now,
     },
     image: {
         type: String
