@@ -9,10 +9,11 @@ const index = (req, res) => {
 };
 
 const show = (req, res) => {
+    console.log(req.params.id)
     db.User.findById(req.params.id, (err, foundUser) => {
-        if (err) console.log('Error in user#show', err);
+        if (err) console.log('Error in getUser#show', err);
 
-        res.status(200).send(foundUser);
+        res.status(200).json(foundUser);
     });
 };
 

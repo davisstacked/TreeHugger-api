@@ -3,10 +3,12 @@ const db = require('../models');
 const index = (req, res) => {
     db.Photo.find({}, (err, foundPhotos) => {
         if (err) console.log('Error in photos#index:', err);
+            console.log(foundPhotos);
+            res.status(200).json(foundPhotos)
+        });
 
-        res.status(200).json(foundPhotos);
-    });
-};
+    };
+
 
 const show = (req, res) => {
     db.Photo.findById(req.params.id, (err, foundPhoto) => {

@@ -78,7 +78,7 @@ const login = async (req, res) => {
         const token = await jwt.sign(payload, secret, expiration);
 
         // SEND SUCCESS WITH TOKEN
-        res.status(200).json({token});
+        res.status(200).json({"token": token, "id": foundUser._id});
     } catch (error) {
         console.log(error);
         return res.status(500).json({

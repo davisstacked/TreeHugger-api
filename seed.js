@@ -1,17 +1,18 @@
 require('dotenv').config();
 const db = require('./models');
 const data = require('./userData.json');
+const photodata = require('./photoData.json');
 
 
-// db.Photo.deleteMany({}, (err, deletedPhotos) => {
-//     db.Photo.create(data.photos, (err, seededPhotos) => {
-//         if (err) console.log(err);
+db.Photo.deleteMany({}, (err, deletedPhotos) => {
+    db.Photo.create(photodata.photos, (err, seededPhotos) => {
+        if (err) console.log(err);
 
-//         console.log(data.photos.length, 'photos created successfully');
+        console.log(photodata.photos.length, 'photos created successfully');
 
-//         process.exit();
-//     });
-// });
+        process.exit();
+    });
+});
 
 db.User.deleteMany({}, (err, deletedUsers) => {
     db.User.create(data.users, (err, seededUsers) => {
