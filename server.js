@@ -21,9 +21,10 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 // middleware - API routes
-// Photo Routes
-app.use('/api/v1/photos', routes.photos);
 app.use(express.json());
+
+// User Routes
+app.use('/api/v1/users', routes.users);
 
 // middleware - API routes
 // Photo Routes
