@@ -4,7 +4,27 @@
             "username": "KatLove",
             "password": "1234",
             "image": "https://www.nps.gov/grca/planyourvisit/images/0531fyp.jpg?maxwidth=650&autorotate=false",
-            "photos": []
+            "photos": [         
+            {
+                "title": "Grand Canyon",
+                "image": "https://www.nps.gov/grca/planyourvisit/images/0531fyp.jpg?maxwidth=650&autorotate=false",
+                "caption": "Gorgeous Sunrise"
+            }, 
+            {
+                "title": "Gorgeous Vistas",
+                "image": "https://www.nps.gov/grca/planyourvisit/images/0531fyp.jpg?maxwidth=650&autorotate=false",
+                "caption": "Gorgeous Sunrise"
+            },
+            {
+                "title": "Beautiful Views!",
+                "image": "https://www.nps.gov/grca/planyourvisit/images/0531fyp.jpg?maxwidth=650&autorotate=false",
+                "caption": "Gorgeous Sunrise"
+            },
+            {
+                "title": "Can't wait to go back!",
+                "image": "https://www.nps.gov/grca/planyourvisit/images/0531fyp.jpg?maxwidth=650&autorotate=false",
+                "caption": "Gorgeous Sunrise"
+            }]
         }
 
     ]
