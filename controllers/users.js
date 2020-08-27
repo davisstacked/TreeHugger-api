@@ -10,11 +10,14 @@ const index = (req, res) => {
 
 const show = (req, res) => {
     console.log(req.params.id)
-    db.User.findById(req.params.id, (err, foundUser) => {
-        if (err) console.log('Error in getUser#show', err);
-
-        res.status(200).json(foundUser);
-    });
+    db.User.findById(req.params.id) 
+    .populate("photos")
+    .exec(
+        (err, foundUser) => {
+            if (err) console.log('Error in getUser#show', err);
+    
+            res.status(200).json(foundUser);
+        });
 };
 
 const create = (req, res) => {

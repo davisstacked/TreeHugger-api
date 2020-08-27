@@ -19,10 +19,16 @@ const show = (req, res) => {
 };
 
 const create = (req, res) => {
-    db.Photo.create(req.body, (err, savedPhoto) => {
+    db.Photo.create(req.body.photo, (err, savedPhoto) => {
         if (err) console.log('Error in photos#create:', err);
-
-        res.status(200).json(savedPhoto);
+        console.log('Saved photos --------->', savedPhoto)
+        db.User.findById(req.body.userId, (err, foundUser) => {
+            if (err) console.log('Error in findingUser#create:', err);
+            foundUser.photos.push(savedPhoto)
+            foundUser.save()
+            console.log(foundUser)
+            res.status(200).json(savedPhoto);
+        })
     });
 };
 
