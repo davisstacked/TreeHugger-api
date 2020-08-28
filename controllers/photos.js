@@ -45,7 +45,7 @@ const update = (req, res) => {
 };
 
 const destroy = (req, res) => {
-    db.Photo.findByIdAndUpdate(req.params.id, (err, deletedPhoto) => {
+    db.Photo.findByIdAndDelete(req.params.id, (err, deletedPhoto) => {
         if (err) console.log('Error in photos#destroy:', err);
 
         res.status(200).json(deletedPhoto);
