@@ -9,7 +9,7 @@ router.get('/', ctrl.photos.index);
 router.get('/:id', ctrl.photos.show);
 router.post('/', authRequired, ctrl.photos.create);
 router.put('/:id', authRequired, ctrl.photos.update);
-router.delete('/:id', authRequired, ctrl.photos.destroy);
+router.delete('/:id', ctrl.photos.destroy);
 
 // Exports
 module.exports = router;
