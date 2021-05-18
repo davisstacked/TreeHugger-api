@@ -28,25 +28,25 @@ const create = (req, res) => {
     });
 };
 
-// const update = (req, res) => {
-//     db.Photo.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedPhoto) => {
-//         if (err) console.log('Error in photo#update:', err);
+const update = (req, res) => {
+    db.Photo.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedPhoto) => {
+        if (err) console.log('Error in photo#update:', err);
 
-//         if (!updatedPhoto) {
-//             res.status(400).json({message: `Could not find Photo with id ${req.params.id}`});
-//         }
+        if (!updatedPhoto) {
+            res.status(400).json({message: `Could not find Photo with id ${req.params.id}`});
+        }
 
-//         res.json(updatedPhoto);
-//     });
-// };
+        res.json(updatedPhoto);
+    });
+};
 
-// const destroy = (req, res) => {
-//     db.Photo.findByIdAndUpdate(req.params.id, (err, deletedPhoto) => {
-//         if (err) console.log('Error in photos#destroy:', err);
+const destroy = (req, res) => {
+    db.Photo.findByIdAndUpdate(req.params.id, (err, deletedPhoto) => {
+        if (err) console.log('Error in photos#destroy:', err);
 
-//         res.status(200).json(deletedPhoto);
-//     });
-// };
+        res.status(200).json(deletedPhoto);
+    });
+};
 
 
 module.exports = {

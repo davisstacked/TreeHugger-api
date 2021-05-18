@@ -1,5 +1,6 @@
 // imports
 const express = require('express');
+const connectDB = require('./config/db');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
@@ -7,6 +8,9 @@ require('dotenv').config();
 const routes = require('./routes');
 const port = process.env.PORT;
 const app = express();
+
+// Connect Database
+connectDB();
 
 // CORS - Cross Origin Resource Sharing
 app.use(cors({
